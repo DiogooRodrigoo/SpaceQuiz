@@ -1,11 +1,16 @@
+import Questionario from "@/components/questionario/Questionario";
 import Logo from "@/components/templates/Logo";
 import Pagina from "@/components/templates/Pagina";
-import { Text, View } from "react-native";
+import PerguntasApp from "@/data/constants/PerguntasApp";
+import { View } from "react-native";
 
 export default function Index() {
   return (
     <Pagina>
-      <Logo />
+      <View style={{ gap: 40 }}>
+        <Logo />
+        <Questionario pergunta={PerguntasApp[0]} />
+      </View>
     </Pagina>
   );
 }
