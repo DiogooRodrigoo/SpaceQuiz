@@ -1,10 +1,11 @@
 import PerguntasProps from "@/data/model/Pergunta";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import Enunciado from "./Enunciado";
 import Opcao from "./Opcao";
 
 export interface QuestionarioProps {
   pergunta: PerguntasProps;
+  opcaoSelecionada: (indice: number) => void;
 }
 
 export default function Questionario(props: QuestionarioProps) {
@@ -17,7 +18,7 @@ export default function Questionario(props: QuestionarioProps) {
             key={indice}
             indice={indice}
             texto={opcao}
-            onPress={() => {}}
+            onPress={() => props.opcaoSelecionada(indice)}
           />
         ))}
       </View>
